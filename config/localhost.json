@@ -1,0 +1,52 @@
+{
+  "PORT": 3000,
+  "DB": {
+    "URL": "mongodb+srv://shuvamsit495:1HzuXm52smCjYufT@cluster0.adbrtwn.mongodb.net/"
+  },
+  "JWT": {
+    "SECRET": "hDCV>py5_@QN]B2g_yx><Eb[W[cEuNWl",
+    "ACCESSTOKENTIME": "1d",
+    "REFRESHTOKENTIME": "1y",
+    "RESETPASSWORDLINKEXP": "10m"
+  },
+  "CRYPTO": {
+    "SECRET": "Shaligram"
+  },
+  "DEFAULT_TIMEZONE": "Asia/Kolkata",
+  "DATE_FORMAT": "%d.%m.%Y %H:%M",
+  "OTP": {
+    "LENGTH": 6
+  },
+  "URLS": {
+    "BASE_URL": "http://localhost:4200",
+    "SETPASSWORD_URL": "/auth/setpassword/",
+    "REGISTER_URL": "/auth/register/",
+    "DOMAIN": "http://localhost:3000",
+    "LINKVERIFICATION": "/api/v1/admin/auth/link-verification",
+    "RESETLINK": "/auth/resetpassword"
+  },
+  "NODEMAILER": {
+    "HOST": "smtp.ethereal.email",
+    "PORT": 587,
+    "USERNAME": "shyanne14@ethereal.email",
+    "PASSWORD": "xfsxrtouimdehttj",
+    "USER": "shuvamsit495@gmail.com",
+    "CLIENTID": "35195593729-apleee6scbe6u77q8lev273b0io647sr.apps.googleusercontent.com",
+    "CLIENTSECRET": "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",
+    "REFRESHTOKEN": "1//04BvdWOp-bTC2CgYIARAAGAQSNwF-L9IryH3XQ7Yd16YxJ8y-i2rkbm_wEhRE34xXthA4eDmpUplDKPOf00KmzGkG5K1kmWbFcTk",
+    "REDIRECTURI": "https://developers.google.com/oauthplayground"
+  },
+  "FIREBASE-ADMIN": {
+    "type": "service_account",
+    "project_id": "ztometbooks-dev",
+    "private_key_id": "cdb0f8fa8e7aca7c15e0b1f900032690e5ea3bdd",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCZL3pCMKJQI6Np\nrSADkBNUHMn0C6WlsYPP4QdzHSmCgCPYiH1vrEj9cffgjHpiXykZ9RbApqL/zJ3m\n96NmvKKU2qCBSDWhA/0AigZZCM014964KFCrTDu/FhOxDbygZXvTM1H+htyeNQGt\nLgpyll6RyFsnQ2vyUW2l0b6voK1nMoMl5c2ISyopqNRAOxuQkK0F4rfsyGbIn056\ni5o7FnlCXXj7vf5KBnx92LeO2YaTyuGjPyX1pL2jT25Ci9xzYDV1Ml87tllgT+cr\ncuI0jedg7a2f6KPySk57PpU+KkV8hCeTFk+CZ3Tu1j7zXqRT43ZgJtXYVMQYxm+g\nYgM8mdNtAgMBAAECggEAJIfzAwfwHWZyWQhFYzQft+Zprv58EWilA5UpnqUsugdv\nBPt/1nriqTZdo7o8kWsaNSuCsozKwG/+lA8oc562swL0VgBvcaeu1UsVOnRj498k\nxQwwOLmkYeyU45tgCWxKPFK30hg9UqlXbgJV0X/Uq7V5L4LfolkS6gF8FQwfbkV5\nxvYSG9cNiPTZnXNEqOiBtZyPqqUY12VTmlqZzCVcFkFyo9m0naDh3m8q3BvFZbkH\nvHM0O7+t+k9QLN0gEQ1sfHMFjQirllcIvc1E7i7shkP3WQM15oj01FdsRRRv6+YK\nFdRjPV672fJIFxmJRYiedtWL1SvF5mmLlsyE7rLmjQKBgQDW30rf5cCQwJyWfL9E\n2piuQcqfk33YalqLFR1tsRANlwONlcfd1n9857fkT6tGp0BzR1LJaXEUaUfjCQqB\nFte827fTh0/2l11wN3tOPY9NZ0gIfXORb67ws2GoqTlEn3CMlM9VUvZvG7lH8S0A\n1QSRtDuh2JDQc9Yw97l4y8z/twKBgQC2gYrPM+SmOB1yc9jXaYmu9i3b/F9Zu1ow\nJaCv09R1VvhYwulCz4ZJMS3LDWiR5Za1W5Bcf9Hxj2E/g6bZ9URKHZ9mePQ5jor9\n+XRD9VvjpgDz0tNwE2gf09DsktVOGvGZ6hK9rqn0kMoEVeJrebqtcqNuqOjnRkWy\nvKPT6re9+wKBgQDUp+d1kfA0Erym3015OpMTG0ALELDi59c2gS4/6pZFrOiyTsOh\nFPHVz4sa5ZJQeaT6smMHvVhR6CRiWQdRXSck3ZugOPH1zjaGohJiC+DwrUAITwh6\nrrrHs/D6OIjaFqYQLBLKkjIdIqYLwnBUu34rKeI+upQQCiS5D+M63xDDHwKBgQCx\n+xMLjmflUcQl4aQOLvX+kkWWyz+RmowReCCEV+hRpkb7CNnCNe+XYUZvRtw7q9KV\nen4GNwDeuhz0e8czt2Spgsn4fOxvVPtnQuaHf7flAfbb0TYxjjt1DnQowekTCmOi\n3gr4wGUuBCV+pOLyPPw4Ohv3xvGa2YUPEbgS6kvWEQKBgQCJF1P8a872ChCI2l9R\nBJ5BPKk9EzJO7eQyQ8Yae1PgwwbX8N7ga8AcClamTz21X1M1y80hn4onX6slE1nD\nvUPLm4kB0cHm40x8ZQ6er7zO8BetHSA8YMWLOOI3k3SpHqEX5Tj7Rla11ysLVcCU\nk0Jkx7MVMKKowGrRTYhpeHxWxg==\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-v0b0b@ztometbooks-dev.iam.gserviceaccount.com",
+    "client_id": "105862721670818893392",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-v0b0b%40ztometbooks-dev.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
+}

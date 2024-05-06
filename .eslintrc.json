@@ -1,0 +1,68 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["standard-with-typescript", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "dot-notation": ["warn"],
+    "max-len": [
+      "warn",
+      {
+        "code": 100,
+        "ignoreComments": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "object-shorthand": [
+      "warn",
+      "always",
+      {
+        "avoidQuotes": true
+      }
+    ],
+    "quote-props": ["warn", "as-needed"],
+    "quotes": [
+      "warn",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "semi": ["warn", "always"],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-empty-function": "error",
+    "@typescript-eslint/no-non-null-assertion": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "format": [
+          "camelCase",
+          "UPPER_CASE",
+          "strictCamelCase",
+          "snake_case",
+          "StrictPascalCase",
+          "PascalCase"
+        ]
+      }
+      // Add more objects for additional naming conventions if needed
+    ],
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+const commonConstants = {};
+
+export { commonConstants };

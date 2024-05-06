@@ -1,0 +1,29 @@
+{
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "allowJs": false,
+    "strictNullChecks": true,
+    "target": "es6",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "types": ["config", "node", "mongoose"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": "./",
+    "paths": {
+      "@models": ["src/models/index.ts"],
+      "@dtos": ["src/interfaces/dtos"],
+      "@interfaces": ["src/interfaces/index.ts"],
+      "@constants": ["src/constants/index.ts"],
+      "@templates": ["src/templates/index.ts"],
+      "@validators": ["src/validators/index.ts"],
+      "@utils": ["src/utils/index.ts"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
