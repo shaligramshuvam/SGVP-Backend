@@ -18,7 +18,7 @@ export class RoleController {
     this.roleService = _roleService;
   }
 
-  @httpPost('/createRole')
+  @httpPost('/create-role')
   async createRole(req: Request, res: Response) {
     try {
       const role = await this.roleService.createRole(req.body as IRoleDTO);
@@ -30,7 +30,7 @@ export class RoleController {
     }
   }
 
-  @httpPut('/updateRole/:id')
+  @httpPut('/update-role/:id')
   async updateRole(req: Request, res: Response) {
     try {
       const id = req.params.id;
@@ -43,7 +43,7 @@ export class RoleController {
     }
   }
 
-  @httpDelete('/deleteRole/:id')
+  @httpDelete('/delete-role/:id')
   async deleteRole(req: Request, res: Response) {
     try {
       const id = req.params.id;
@@ -56,7 +56,7 @@ export class RoleController {
     }
   }
 
-  @httpGet('/roleListing')
+  @httpGet('/role-listing')
   async getRole(req: Request, res: Response) {
     try {
       const query: IRoleQueryParamsDTO = req.query;
@@ -69,11 +69,11 @@ export class RoleController {
     }
   }
 
-  @httpGet('/roleListing/:id')
+  @httpGet('/role-listing/:id')
   async getRoleById(req: Request, res: Response) {
     try {
-      const query: IRoleQueryParamsDTO = req.query;
-      const role = await this.roleService.roleListing(query);
+      const id = req.params.id;
+      const role = await this.roleService.roleListingById(id);
       res.status(statusCodes.success_status).json(role);
     } catch (error) {
       res

@@ -19,7 +19,11 @@ export class RoleService implements IRoleService {
           data: role,
         });
       } catch (error) {
-        reject(new Error(error.message));
+        if (error?.code && error?.code === 11000) {
+          reject(new Error(Messages.recordAlreadyExist));
+        } else {
+          reject(new Error(error.message));
+        }
       }
     });
   }
@@ -170,6 +174,27 @@ export class RoleService implements IRoleService {
             },
           });
         }
+      } catch (error) {
+        reject(new Error(error.message));
+      }
+    });
+  }
+
+  async roleListingById(id: string) {
+    return await new Promise<any>(async (resolve, reject) => {
+      try {
+        if (!isValidObjectId(id)) {
+          reject(new Error(Messages.invalidId));
+        }
+        const role = await Role.findOne({
+          _id: id,
+        });
+
+        resolve({
+          status: true,
+          message: Messages.requestCompletedSuccessfully,
+          data: role,
+        });
       } catch (error) {
         reject(new Error(error.message));
       }

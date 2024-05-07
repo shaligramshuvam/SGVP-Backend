@@ -5,4 +5,5 @@ export interface IRoleService {
   updateRole: (id: string, roleData: IRoleDTO) => Promise<any>;
   deleteRole: (id: string) => Promise<any>;
   roleListing: (params: IRoleQueryParamsDTO) => Promise<any>;
+  roleListingById: (id: string) => Promise<any>;
 }
