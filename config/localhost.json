@@ -1,7 +1,7 @@
 {
   "PORT": 3000,
   "DB": {
-    "URL": "mongodb+srv://shuvamsit495:1HzuXm52smCjYufT@cluster0.adbrtwn.mongodb.net/"
+    "URL": "mongodb+srv://shuvamsit495:1HzuXm52smCjYufT@cluster0.adbrtwn.mongodb.net/SGVP-local"
   },
   "JWT": {
     "SECRET": "hDCV>py5_@QN]B2g_yx><Eb[W[cEuNWl",

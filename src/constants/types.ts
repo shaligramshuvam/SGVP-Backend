@@ -13,6 +13,7 @@ const TYPES = {
   UserService: Symbol.for('IUserService'),
   PermissionService: Symbol.for('IPermissionService'),
   ModuleService: Symbol.for('ModuleService'),
+  DepartmentService: Symbol.for('DepartmentService'),
 };
 
 export { TYPES };
