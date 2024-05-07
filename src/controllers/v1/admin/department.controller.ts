@@ -20,7 +20,7 @@ export class DepartmentController {
     this.departmentService = _departmentService;
   }
 
-  @httpPost('/createDepartment')
+  @httpPost('/create-department')
   async createDepartment(req: Request, res: Response) {
     try {
       const department = await this.departmentService.createDepartment(
