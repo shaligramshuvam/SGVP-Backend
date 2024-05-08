@@ -6,7 +6,7 @@ import { Role } from '@models';
 import { paginatorData } from '@utils';
 import { injectable } from 'inversify';
 import { type PipelineStage, isValidObjectId } from 'mongoose';
-
+import config from 'config';
 @injectable()
 export class RoleService implements IRoleService {
   async createRole(roleData: IRoleDTO) {
@@ -98,6 +98,8 @@ export class RoleService implements IRoleService {
     return await new Promise<any>(async (resolve, reject) => {
       try {
         const { skip, limit, sort } = paginatorData(params ?? {});
+        const timezone = config.get('DEFAULT_TIMEZONE');
+        const dateFormat = config.get('DATE_FORMAT');
         const searchFields = ['roleName'];
 
         let searchFilter: any = [];
@@ -126,6 +128,20 @@ export class RoleService implements IRoleService {
           {
             $addFields: {
               _id: { $toString: '$_id' },
+              updatedAt: {
+                $dateToString: {
+                  format: dateFormat,
+                  date: { $toDate: '$updatedAt' },
+                  timezone,
+                },
+              },
+              createdAt: {
+                $dateToString: {
+                  format: dateFormat,
+                  date: { $toDate: '$createdAt' },
+                  timezone,
+                },
+              },
             },
           },
         ];
@@ -187,9 +203,15 @@ export class RoleService implements IRoleService {
           reject(new Error(Messages.invalidId));
         }
         const role = await Role.findOne({
-          _id: id,
+          $and: [{ _id: id }, { isDeleted: false }],
         });
-
+        if (!role) {
+          resolve({
+            status: false,
+            message: Messages.dataNotFound,
+          });
+          return;
+        }
         resolve({
           status: true,
           message: Messages.requestCompletedSuccessfully,
