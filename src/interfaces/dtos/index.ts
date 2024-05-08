@@ -5,5 +5,6 @@ export * from './IAuditFields';
 export * from './IBaseQueryParamsDTO';
 export * from './IColumnFilterDTO';
 export * from './IModuleDTO';
+export * from './IVendorDTO';
 export * from './IDepartmentDTO';
 export * from './IRoleDTO';

@@ -27,6 +27,7 @@ const Messages = {
   genericError: 'Something went wrong!',
   isNotValid: (field: string) => `${field} is not valid`,
   isCurrentlyInUse: (field: string) => `${field} is currently is use.`,
+  fileNotFound: 'File doesnot exists',
 
   // Not messages
   userNotFound: 'User not found.',

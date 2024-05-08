@@ -5,7 +5,6 @@ import { getRouteInfo } from 'inversify-express-utils';
 import * as prettyjson from 'prettyjson';
 import config from 'config';
 import path from 'path';
-import { initFirebase } from './utils/firebaseAdmin';
 // import { getRouteInfo } from 'inversify-express-utils';
 
 server.setErrorConfig((app) => {
@@ -23,9 +22,6 @@ server.setErrorConfig((app) => {
     });
   });
 });
-
-// Init firebase
-initFirebase();
 
 process
   .on('unhandledRejection', (reason, p) => {
