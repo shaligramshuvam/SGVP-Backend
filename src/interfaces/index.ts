@@ -8,3 +8,4 @@ export * from './services/IUserSerivce';
 export * from './services/IPermission.Service';
 export * from './services/IModuleService';
 export * from './services/IDepartmentService';
+export * from './services/IRoleService';

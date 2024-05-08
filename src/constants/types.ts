@@ -14,6 +14,7 @@ const TYPES = {
   PermissionService: Symbol.for('IPermissionService'),
   ModuleService: Symbol.for('ModuleService'),
   DepartmentService: Symbol.for('DepartmentService'),
+  RoleService: Symbol.for('IRoleService'),
 };
 
 export { TYPES };
