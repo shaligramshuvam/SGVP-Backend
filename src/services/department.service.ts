@@ -6,7 +6,7 @@ import { Department } from '@models';
 import { paginatorData } from '@utils';
 import { injectable } from 'inversify';
 import { type PipelineStage, isValidObjectId } from 'mongoose';
-
+import config from 'config';
 @injectable()
 export class DepartmentService implements IDepartmentService {
   async createDepartment(departmentData: IDepartmentDTO) {
@@ -101,7 +101,9 @@ export class DepartmentService implements IDepartmentService {
     return await new Promise<any>(async (resolve, reject) => {
       try {
         const { skip, limit, sort } = paginatorData(params ?? {});
-        const searchFields = [];
+        const timezone = config.get('DEFAULT_TIMEZONE');
+        const dateFormat = config.get('DATE_FORMAT');
+        const searchFields = ['departmentName'];
 
         let searchFilter: any = [];
         const columnFilters = params?.columnFilters;
@@ -129,6 +131,20 @@ export class DepartmentService implements IDepartmentService {
           {
             $addFields: {
               _id: { $toString: '$_id' },
+              updatedAt: {
+                $dateToString: {
+                  format: dateFormat,
+                  date: { $toDate: '$updatedAt' },
+                  timezone,
+                },
+              },
+              createdAt: {
+                $dateToString: {
+                  format: dateFormat,
+                  date: { $toDate: '$createdAt' },
+                  timezone,
+                },
+              },
             },
           },
         ];
@@ -189,7 +205,16 @@ export class DepartmentService implements IDepartmentService {
         if (!isValidObjectId(id)) {
           reject(new Error(Messages.invalidId));
         }
-        const department = await Department.findOne({ _id: id });
+        const department = await Department.findOne({
+          $and: [{ _id: id }, { isDeleted: false }],
+        });
+        if (!department) {
+          resolve({
+            status: false,
+            message: Messages.dataNotFound,
+          });
+          return;
+        }
         resolve({
           status: true,
           message: Messages.requestCompletedSuccessfully,
