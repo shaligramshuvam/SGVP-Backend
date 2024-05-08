@@ -6,6 +6,8 @@ import {
   ModuleService,
   VendorService,
   FileService,
+  DepartmentService,
+  RoleService,
 } from './';
 import {
   type IAuthService,
@@ -14,9 +16,10 @@ import {
   type IModuleService,
   type IVendorService,
   type IFileService,
+  type IDepartmentService,
+  type IRoleService,
 } from '@interfaces';
 import { TYPES } from '@constants';
-
 // Define a container module for services.
 const serviceModule = new ContainerModule((bind) => {
   // Bind services to their respective interfaces.
@@ -26,6 +29,7 @@ const serviceModule = new ContainerModule((bind) => {
   bind<IModuleService>(TYPES.ModuleService).to(ModuleService);
   bind<IVendorService>(TYPES.VendorService).to(VendorService);
   bind<IFileService>(TYPES.FileService).to(FileService);
+  bind<IDepartmentService>(TYPES.DepartmentService).to(DepartmentService);
+  bind<IRoleService>(TYPES.RoleService).to(RoleService);
 });
-
 export default serviceModule;

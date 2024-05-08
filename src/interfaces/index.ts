@@ -9,3 +9,5 @@ export * from './services/IPermission.Service';
 export * from './services/IModuleService';
 export * from './services/IVendorService';
 export * from './services/IFileService';
+export * from './services/IDepartmentService';
+export * from './services/IRoleService';

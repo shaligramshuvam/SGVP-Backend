@@ -15,6 +15,8 @@ const TYPES = {
   ModuleService: Symbol.for('ModuleService'),
   VendorService: Symbol.for('VendorService'),
   FileService: Symbol.for('FileService'),
+  DepartmentService: Symbol.for('DepartmentService'),
+  RoleService: Symbol.for('IRoleService'),
 };
 
 export { TYPES };
