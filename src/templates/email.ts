@@ -53,7 +53,7 @@ export const forgetPasswordContent = (
                             <tbody>
                               <tr>
                                 <td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                  <img align="center" alt="" src="https://tzomet-books-assets.s3.il-central-1.amazonaws.com/internal/assets/public/writers/6572d47edfb88c91b072ba76/profileImg/1702446658748-logo.png" width="150px" style="max-width: 300px;padding-bottom: 0px;vertical-align: bottom;display: inline !important;border-radius: 20%;width: 100%;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
+                                  <img align="center" alt="" src="" width="150px" style="max-width: 300px;padding-bottom: 0px;vertical-align: bottom;display: inline !important;border-radius: 20%;width: 100%;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
                                 </td>
                               </tr>
                             </tbody>

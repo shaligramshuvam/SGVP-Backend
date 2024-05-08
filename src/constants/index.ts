@@ -4,3 +4,5 @@ export * from './types';
 export * from './permission-types';
 export * from './audit-types';
 export * from './commonConstants';
+export * from './filePath';
+export * from './userTypes';

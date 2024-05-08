@@ -16,13 +16,11 @@ oauth2Client.setCredentials({
 const accessToken = new Promise((resolve, reject) => {
   oauth2Client.getAccessToken((err, token) => {
     if (err) {
-      console.log('*ERR: ', err);
       reject(err);
     }
     resolve(token);
   });
 });
-console.log('🚀 ~ accessToken ~ accessToken:', accessToken);
 
 const transporter: Transporter = nodemailer.createTransport({
   service: 'gmail',

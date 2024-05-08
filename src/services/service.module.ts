@@ -1,10 +1,19 @@
 import { ContainerModule } from 'inversify';
-import { AuthService, UserService, PermissionService, ModuleService } from './';
+import {
+  AuthService,
+  UserService,
+  PermissionService,
+  ModuleService,
+  VendorService,
+  FileService,
+} from './';
 import {
   type IAuthService,
   type IUserService,
   type IPermissionService,
   type IModuleService,
+  type IVendorService,
+  type IFileService,
 } from '@interfaces';
 import { TYPES } from '@constants';
 
@@ -15,6 +24,8 @@ const serviceModule = new ContainerModule((bind) => {
   bind<IUserService>(TYPES.UserService).to(UserService);
   bind<IPermissionService>(TYPES.PermissionService).to(PermissionService);
   bind<IModuleService>(TYPES.ModuleService).to(ModuleService);
+  bind<IVendorService>(TYPES.VendorService).to(VendorService);
+  bind<IFileService>(TYPES.FileService).to(FileService);
 });
 
 export default serviceModule;
